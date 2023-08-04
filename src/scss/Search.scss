@@ -1,0 +1,47 @@
+@use "./modules/flex";
+
+.search-bar-menu {
+  @include flex.flexbox;
+
+  .content {
+    @include flex.flexbox(_, space-between);
+
+    .logo {
+      margin: 0 10px;
+    }
+
+    .search-bar {
+      input {
+        padding: 10.1px;
+        outline: none;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        border-right: none;
+      }
+      select {
+        padding: 10px;
+        width: 200px;
+        outline: none;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        background-color: white;
+        color: gray;
+        cursor: pointer;
+      }
+
+      button {
+        padding: 12px 25px;
+        border: none;
+        background-color: skyblue;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .menu-icons {
+      font-size: 25px;
+
+      i {
+        margin: 10px;
+      }
+    }
+  }
+}
