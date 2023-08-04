@@ -1,4 +1,5 @@
 @use "./modules/flex";
+@use "./modules/vrs";
 
 .search-bar-menu {
   @include flex.flexbox;
@@ -30,7 +31,7 @@
       button {
         padding: 12px 25px;
         border: none;
-        background-color: skyblue;
+        background-color: vrs.$prim-color;
         font-weight: bold;
         cursor: pointer;
       }
@@ -43,5 +44,17 @@
         margin: 10px;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .search-bar-menu .content .logo img {
+    width: 125px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .search-bar-menu .content .search-bar {
+    display: none;
   }
 }

@@ -21,10 +21,10 @@ function Search() {
             <button>Search</button>
           </div>
           <div className="menu-icons">
-            <i class="bi bi-arrow-repeat"></i>
-            <i class="bi bi-heart"></i>
-            <i class="bi bi-bag"></i>
-            <i class="bi bi-person"></i>
+            <i className="bi bi-arrow-repeat"></i>
+            <i className="bi bi-heart"></i>
+            <i className="bi bi-bag"></i>
+            <i className="bi bi-person"></i>
           </div>
         </div>
       </div>
