@@ -1,0 +1,29 @@
+@use "./modules/flex";
+
+.top-header {
+  @include flex.flexbox;
+
+  .content {
+    @include flex.flexbox(_, space-between);
+  }
+  .left {
+    @include flex.flexbox;
+
+    p {
+      margin: 5px 10px;
+      font-size: 13px;
+    }
+  }
+
+  .right {
+    @include flex.flexbox;
+
+    select {
+      margin: 5px 10px;
+      border: none;
+      background-color: white;
+      font-size: 13px;
+      outline: none;
+    }
+  }
+}
