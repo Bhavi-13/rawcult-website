@@ -1,0 +1,125 @@
+.flashSale{
+    background-color: rgb(245, 182, 203);
+    margin: 40px 180px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    cursor: pointer;
+    .flashSaleContent{
+        .countdown-timer {
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            font-size: 1.5rem;
+            gap: 1rem;
+            .countdown-item {
+                display: flex;
+                flex-direction: column;
+                font-size: 18px;
+                font-weight: 500;
+                align-items: center;
+                .countdown-value {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: rgb(61, 61, 241);
+                    background-color: #fff;
+                    border-radius: 100%;
+                    padding: 15px;
+                    width: 90px;
+                    height: 90px;
+                    text-align: center;
+                }
+            }
+            
+            
+        }
+        h1{
+            margin-top: 60px;
+            font-size: 46px;
+        }
+        p{
+            margin-top: 10px;
+            width: 450px;
+            font-size: 18px;
+        }
+        a{
+            margin-top: 10px;
+            color: #000;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #000;
+
+        }
+    }
+      .image{
+        img{
+            width: 550px;
+            height: 350px;
+        }
+      }
+    
+      
+}
+
+@media screen and (max-width: 768px) {
+    .flashSale{
+        margin: 20px;
+        padding:40px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .flashSaleContent{
+            .countdown-timer {
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                font-size: 1.5rem;
+                gap: 1rem;
+                .countdown-item {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 18px;
+                    font-weight: 500;
+                    align-items: center;
+                    .countdown-value {
+                        font-size: 1.2rem;
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+                
+                
+            }
+            h1{
+                margin-top: 40px;
+                font-size: 36px;
+            }
+            p{
+                margin-top: 10px;
+                width: 330px;
+                font-size: 18px;
+            }
+            a{
+                margin-top: 10px;
+                color: #000;
+                font-size: 16px;
+                text-decoration: none;
+                font-weight: 500;
+                border-bottom: 1px solid #000;
+    
+            }
+        }
+       
+          
+        .image{
+            img{
+                width: 330px;
+                height: 250px;
+            }
+          }
+          
+    }
+  
+}
