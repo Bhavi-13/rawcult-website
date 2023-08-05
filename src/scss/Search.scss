@@ -5,7 +5,7 @@
   @include flex.flexbox;
 
   .content {
-    @include flex.flexbox(_, space-between);
+    @include flex.flexbox(row, space-between, flex-start);
 
     .logo {
       margin: 0 10px;

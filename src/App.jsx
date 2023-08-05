@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Items from "./components/Items";
 import Coupon from "./components/Coupon";
 import WhyUs from "./components/WhyUs";
+import Contact from "./components/Contact";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Items heading={"Feature Design"} comp={4} />
       <Items heading={"New Arrival"} comp={12} />
       <Coupon />
+      <Contact />
+      <Login />
     </div>
   );
 }

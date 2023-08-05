@@ -1,0 +1,42 @@
+@use "./modules/flex";
+
+.login {
+  @include flex.flexbox;
+
+  .content {
+    @include flex.flexbox(column);
+
+    .simple-login {
+      @include flex.flexbox(column);
+      width: 400px;
+
+      input {
+        margin: 10px;
+        padding: 10px;
+        width: 100%;
+      }
+    }
+
+    p {
+      margin: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: orangered;
+      color: white;
+      border-radius: 5px;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .login .content .simple-login {
+    width: 70%;
+  }
+}

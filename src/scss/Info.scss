@@ -1,0 +1,79 @@
+@use "./modules/flex";
+
+.grid-container-2 {
+  display: grid;
+  grid-template-areas:
+    "phone email"
+    "address address";
+  gap: 25px;
+  justify-items: center;
+
+  .contact-item {
+    @include flex.flexbox(column);
+    padding: 20px 10px;
+
+    i {
+      font-size: 30px;
+      border: 2px solid black;
+      padding: 8px;
+      border-radius: 50%;
+      @include flex.flexbox;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  #phone {
+    grid-area: phone;
+    width: 100%;
+    background: pink;
+  }
+
+  #email {
+    grid-area: email;
+    width: 100%;
+    background-color: skyblue;
+  }
+
+  #address {
+    @include flex.flexbox;
+    grid-area: address;
+    background-color: lightgreen;
+    width: 100%;
+
+    .full-add {
+      padding: 0 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .contact-us .content .form-and-info .grid-container-2 {
+    grid-template-areas:
+      "phone"
+      "email"
+      "address";
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .contact-us .content .form-and-info {
+    .grid-container-2 {
+      #address {
+        flex-direction: column;
+        width: 100%;
+        h2,
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
