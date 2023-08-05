@@ -35,7 +35,7 @@ const MyLatestNews = () =>
                     <div className="cardContent">
                         <div className="comments">
                             <p> <i className="bi bi-person"></i> {news.admin}</p>
-                            <p><i class="bi bi-chat-left-text"></i> {news.comments}</p>
+                            <p><i className="bi bi-chat-left-text"></i> {news.comments}</p>
                         </div>
                         <h4>{news.h3}</h4>
                         <p>{news.info}</p>
