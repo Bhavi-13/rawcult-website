@@ -1,0 +1,83 @@
+
+.saleCard{
+    margin: 60px 150px;
+    .headContent{
+        margin: 30px 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        h2{
+           
+            font-weight: 600;
+        }
+        i{
+            font-size: 20px;
+        }
+    }
+    
+
+    .saleDetails{
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-content: space-evenly;
+        gap: 10px;
+        grid-auto-rows: 100px;
+        .card{
+            border: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .leftContent{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                .imageContent{
+                    img{
+                        width: 80px;
+                        object-fit: cover;
+                        height: 80px;
+                    }
+                }
+                .info{
+                    margin: 10px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    a{
+                        color: black;
+                        text-decoration: none;
+                        font-size: 16px;
+                        font-weight: 600;
+                        width: 177px;
+                        &:hover{
+                            color: blue;
+                        }
+                    }
+                    span{
+                        font-size: 19px;
+                        font-weight: 700;
+                        color: red;
+                       strike{
+                        color: gray;
+                       }
+                    
+                    }
+                }
+                
+            }
+     
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .saleCard{
+        margin: 20px;
+        .headContent{
+            margin: 0px;
+            margin-bottom: 20px;
+        }
+    }
+}

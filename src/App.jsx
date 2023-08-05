@@ -1,4 +1,6 @@
+import CarouselSlider from "./components/CarouselSlider";
 import Header from "./components/Header";
+import Sales from "./components/Sales";
 import Search from "./components/Search";
 import Navbar from "./components/Navbar";
 import Items from "./components/Items";
@@ -6,6 +8,8 @@ import Coupon from "./components/Coupon";
 import WhyUs from "./components/WhyUs";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import Clients from './components/Clients'
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +24,14 @@ function App() {
       <Coupon />
       <Contact />
       <Login />
+      <hr />
+      <CarouselSlider/>
+      <hr />
+      <Sales/>
+      <hr />
+      <Clients/>
+      <hr />
+      <Footer/>
     </div>
   );
 }
