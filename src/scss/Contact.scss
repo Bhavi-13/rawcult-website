@@ -1,0 +1,27 @@
+@use "./modules/flex";
+@use "./modules/vrs";
+
+.contact-us {
+  @include flex.flexbox;
+
+  .content {
+    margin: 0 10px;
+
+    .form-and-info {
+      @include flex.flexbox(row);
+      gap: 100px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .contact-us .content {
+    .heading {
+      text-align: center;
+    }
+
+    .form-and-info {
+      flex-direction: column;
+    }
+  }
+}

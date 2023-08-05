@@ -1,0 +1,73 @@
+@use "./modules/flex";
+@use "./modules/vrs";
+
+.discount-coupon {
+  @include flex.flexbox;
+  background-color: skyblue;
+  padding: 50px 0;
+
+  .content {
+    @include flex.flexbox(column);
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 0;
+
+      span {
+        color: red;
+      }
+    }
+
+    p {
+      font-size: 20px;
+    }
+    .form {
+      @include flex.flexbox;
+      background-color: white;
+      border-radius: 5px;
+
+      i {
+        margin-left: 10px;
+      }
+
+      input {
+        padding: 15px;
+        border: none;
+        width: 300px;
+        outline: none;
+      }
+      button {
+        padding: 15px;
+        border: none;
+        background-color: vrs.$prim-color;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .discount-coupon {
+    .content {
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .form {
+        input {
+          width: 150px;
+          padding: 10px;
+        }
+
+        button {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

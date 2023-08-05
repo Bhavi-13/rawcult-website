@@ -1,0 +1,72 @@
+@use "./modules/flex";
+@use "./modules/grid";
+
+.trendy-design {
+  @include flex.flexbox;
+
+  .content {
+    @include flex.flexbox(column, center, unset);
+    margin: 0 10px;
+
+    .heading-part {
+      @include flex.flexbox(row, space-between);
+    }
+
+    button {
+      border: none;
+      font-size: 16px;
+      background-color: white;
+      font-weight: 600;
+      cursor: pointer;
+
+      i {
+        margin-left: 5px;
+      }
+    }
+
+    .grid-container {
+      @include grid.gridbox(4, 25px);
+      justify-items: center;
+
+      .item {
+        h3 {
+          font-weight: 500;
+        }
+        img {
+          width: 250px;
+        }
+        p {
+          color: grey;
+
+          span {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .trendy-design .content .grid-container {
+    @include grid.gridbox(3, 20px);
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .trendy-design .content .grid-container {
+    @include grid.gridbox(2, 15px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .trendy-design .content .grid-container {
+    @include grid.gridbox(2, 10px);
+
+    .item {
+      img {
+        width: 150px;
+      }
+    }
+  }
+}
