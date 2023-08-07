@@ -1,19 +1,10 @@
 import "../scss/Navbar.scss";
-import React, {useState} from "react";
 
 function Navbar() {
 
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-
-  const toggleMobileNav = () => {
-    setIsMobileNavOpen(!isMobileNavOpen);
-  };
   return (
-    <div className={`navbar ${isMobileNavOpen ? 'mobile-open' : ''}`}>
+    <div className='navbar'>
       <div className="content-container ">
-          <button className="mobile-toggler" onClick={toggleMobileNav}>
-            <i className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'}`}></i>
-          </button>
         <div className='links-container'>
        
           <div className="category-links">
@@ -58,3 +49,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
