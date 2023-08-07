@@ -1,0 +1,44 @@
+@use "./modules/flex";
+@use "./modules/grid";
+
+.why-choose-us {
+  @include flex.flexbox;
+  margin: 50px 0;
+
+  .content {
+    @include flex.flexbox(row, flex-start);
+    color: white;
+    background-color: rebeccapurple;
+    padding: 20px;
+    margin: 0 10px;
+
+    .grid-container {
+      @include grid.gridbox(4, 25px);
+
+      .item {
+        @include flex.flexbox;
+
+        .icon i {
+          font-size: 40px;
+          margin: 0 10px;
+          color: skyblue;
+        }
+
+        h4 {
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .why-choose-us .content .grid-container {
+    @include grid.gridbox(1, 25px);
+    justify-items: flex-start;
+  }
+}

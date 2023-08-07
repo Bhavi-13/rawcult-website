@@ -10,6 +10,7 @@ function CarouselSlider() {
         <h1>Shop the Hottest Brands and Designs at ShopO</h1>
         <button>Shop Now </button>
     </div>
+
     <div id="carouselExampleIndicators" className="carousel slide">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -25,6 +26,7 @@ function CarouselSlider() {
           </div>
           <div className="carousel-item">
             <img src="https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?auto=compress&cs=tinysrgb&w=600" className="d-block w-100" alt="..."/>
+
           </div>
         </div>
       </div>

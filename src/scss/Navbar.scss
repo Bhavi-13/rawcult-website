@@ -1,0 +1,70 @@
+@use "./modules/flex";
+@use "./modules/vrs";
+
+.navbar {
+  @include flex.flexbox(_, center, flex-end);
+  background-color: vrs.$prim-color;
+  height: 60px;
+
+  .links-container {
+    @include flex.flexbox(row, space-between);
+    margin: 0 10px;
+
+    .category-links {
+      @include flex.flexbox;
+
+      .all-categories {
+        @include flex.flexbox(row, space-between);
+        width: 250px;
+        border-radius: 10px 10px 0 0;
+        border: none;
+        padding: 5px;
+        background-color: white;
+        cursor: pointer;
+
+        .icon-text {
+          @include flex.flexbox;
+
+          i {
+            margin: 0 10px;
+          }
+        }
+        .icon i {
+          margin: 0 10px;
+        }
+      }
+
+      .links {
+        @include flex.flexbox;
+        list-style: none;
+
+        li a {
+          margin: 20px;
+          text-decoration: none;
+          color: black;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+    button.seller-btn {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .navbar {
+    display: none;
+  }
+}
