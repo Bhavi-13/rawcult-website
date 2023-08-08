@@ -5,7 +5,6 @@
   @include flex.flexbox(_, center, flex-end);
   background-color: vrs.$prim-color;
   height: 60px;
-
   .links-container {
     @include flex.flexbox(row, space-between);
     margin: 0 10px;

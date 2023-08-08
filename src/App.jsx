@@ -15,6 +15,8 @@ import Coupon from "./components/Coupon";
 import WhyUs from "./components/WhyUs";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import ApprovalForm from "./components/ApprovalForm";
+import ProductsUploadForm from "./components/ProductsUploadForm";
 
 function App() {
   return (
@@ -34,6 +36,31 @@ function App() {
       <Footer />
       <Contact />
       <Login />
+      <hr />
+      <ApprovalForm/>
+      <hr />
+      <ProductsUploadForm/>
+      <hr />
+      <CarouselSlider/>
+      <hr />
+      <Sales/>
+      <hr />
+
+     
+      <FlashSale/>
+      <hr />
+      <CustomerFeedback/>
+      <hr />
+      <LatestNews/>
+      <hr />
+      <AboutInfo/>
+      <hr />
+
+
+      <Clients/>
+      <hr />
+     
+      <Footer/>
       <CustomerFeedback />
       <LatestNews />
       <AboutInfo />

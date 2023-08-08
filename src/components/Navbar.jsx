@@ -1,10 +1,12 @@
 import "../scss/Navbar.scss";
 
 function Navbar() {
+
   return (
-    <div className="navbar">
-      <div className="content-container">
-        <div className="links-container">
+    <div className='navbar'>
+      <div className="content-container ">
+        <div className='links-container'>
+       
           <div className="category-links">
             <button className="all-categories">
               <div className="icon-text">
@@ -47,3 +49,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
