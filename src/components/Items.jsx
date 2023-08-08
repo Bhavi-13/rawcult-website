@@ -1,5 +1,11 @@
 import "../scss/Items.scss";
 import Item from "./Item";
+import PropTypes from "prop-types";
+
+Items.propTypes = {
+  heading: PropTypes.string.isRequired,
+  comp: PropTypes.number.isRequired,
+};
 
 function Items({ heading, comp }) {
   const items = Array.from({ length: comp }, (_, index) => {

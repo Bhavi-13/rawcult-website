@@ -36,31 +36,8 @@ function App() {
       <Footer />
       <Contact />
       <Login />
-      <hr />
-      <ApprovalForm/>
-      <hr />
-      <ProductsUploadForm/>
-      <hr />
-      <CarouselSlider/>
-      <hr />
-      <Sales/>
-      <hr />
-
-     
-      <FlashSale/>
-      <hr />
-      <CustomerFeedback/>
-      <hr />
-      <LatestNews/>
-      <hr />
-      <AboutInfo/>
-      <hr />
-
-
-      <Clients/>
-      <hr />
-     
-      <Footer/>
+      <ApprovalForm />
+      <ProductsUploadForm />
       <CustomerFeedback />
       <LatestNews />
       <AboutInfo />
