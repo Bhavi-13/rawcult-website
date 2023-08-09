@@ -1,10 +1,7 @@
-
-import React from 'react'
-import '../scss/CarouselSlider.scss'
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap.bundle"
-import "bootstrap-icons/font/bootstrap-icons.css"
-
+import "../scss/CarouselSlider.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function CarouselSlider() {
   return (
