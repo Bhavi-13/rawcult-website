@@ -17,6 +17,10 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import ApprovalForm from "./components/ApprovalForm";
 import ProductsUploadForm from "./components/ProductsUploadForm";
+import Register from "./components/Register";
+import AdminPanel from "./components/AdminPanel";
+import ShoppingCart from "./components/ShoppingCart";
+import CheckOut from "./components/CheckOut";
 
 function App() {
   return (
@@ -34,8 +38,12 @@ function App() {
       <Sales />
       <Coupon />
       <Footer />
+      <AdminPanel/>
+      <ShoppingCart/>
+      <CheckOut/>
       <Contact />
       <Login />
+      <Register/>
       <ApprovalForm />
       <ProductsUploadForm />
       <CustomerFeedback />
