@@ -8,10 +8,10 @@ function ShoppingCart() {
    
     return (
     <div className='container m-auto'>
-        <div className="row">
-            <div className="col-md-12 col-lg-10 m-auto shadow-lg bg-body-tertiary rounded-2">
+        <div className="row d-grid row-cols-2">
+            <div className="col-12 col-lg-10 m-auto shadow-lg bg-body-tertiary rounded-2">
                 <div className="card-group d-flex">
-                    <div className="card border border-0" style={{ flex: 2 }}>
+                    <div className="card col border border-0" style={{ flex: 2 }}>
                         <div className="card-header d-flex flex-direction-row justify-content-between p-4">
                             <h5 className='fs-3 fw-semi-bold'>Shopping Cart</h5> 
                             <p className='fw-bold text-secondary'>2 items</p>
@@ -51,7 +51,7 @@ function ShoppingCart() {
                         </div>
                     </div>
                 
-                    <div className="card p-3 bg-info border border-0" style={{ flex: 1 }}>
+                    <div className="card col p-3 bg-info border border-0" style={{ flex: 1 }}>
                         <div className="card-header p-3">
                             <h5 className='fw-semi-bold fs-3'>Summary</h5>
                         </div>

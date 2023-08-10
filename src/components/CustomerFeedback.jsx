@@ -29,7 +29,7 @@ const FeedbackReview = () => {
   ];
   return (
     <div className="feedback">
-      <h3>Customers Feedback</h3>
+      <h4>Customers Feedback</h4>
       <div className="reviewCard">
         <div className="reviewDetails">
           {reviewData.map((data, index) => (

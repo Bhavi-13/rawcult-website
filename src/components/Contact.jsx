@@ -5,7 +5,7 @@ import Info from "./Info";
 function Contact() {
   return (
     <div className="contact-us">
-      <div className="content-container">
+      <div className="contactContainer">
         <div className="content">
           <div className="heading">
             <h2>Contact Information</h2>

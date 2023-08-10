@@ -1,4 +1,5 @@
 import "../scss/Navbar.scss";
+import {NavLink} from 'react-router-dom'
 
 function Navbar() {
 
@@ -19,7 +20,7 @@ function Navbar() {
             </button>
             <ul className="links">
               <li>
-                <a href="#">Homepage</a>
+                <NavLink to={'/'}>Home</NavLink>
               </li>
               <li>
                 <a href="#">Shop</a>
@@ -28,13 +29,13 @@ function Navbar() {
                 <a href="#">Pages</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <NavLink to={"/about"}>About</NavLink>
               </li>
               <li>
                 <a href="#">Blog</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <NavLink to={'/contact'}>Contact</NavLink>
               </li>
             </ul>
           </div>

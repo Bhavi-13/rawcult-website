@@ -21,34 +21,39 @@ import Register from "./components/Register";
 import AdminPanel from "./components/AdminPanel";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckOut from "./components/CheckOut";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import HomePage from "./components/HomePage";
+import AboutUsPage from "./components/AboutUsPage";
+import ContactPage from "./components/ContactPage";
+
 
 function App() {
   return (
     <div>
-      <Header />
-      <Search />
-      <Navbar />
-      <CarouselSlider />
-      <WhyUs />
-      <Items heading={"Trendy Design"} comp={4} />
-      <Clients />
-      <FlashSale />
-      <Items heading={"Feature Design"} comp={4} />
-      <Items heading={"New Arrival"} comp={12} />
-      <Sales />
-      <Coupon />
-      <Footer />
+      <Router>
+
+          <Header />
+          <Search />
+          <Navbar />
+
+          <Routes>
+              <Route path="/" element={<HomePage/>} />
+              <Route path="/about" element={<AboutUsPage/>} />
+              <Route path="/contact" element={<ContactPage/>} />
+          </Routes>
+          
+          <Footer />
+
+      </Router>
+      
       <AdminPanel/>
       <ShoppingCart/>
       <CheckOut/>
-      <Contact />
       <Login />
       <Register/>
       <ApprovalForm />
       <ProductsUploadForm />
-      <CustomerFeedback />
-      <LatestNews />
-      <AboutInfo />
+     
     </div>
   );
 }
