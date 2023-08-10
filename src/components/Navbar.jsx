@@ -32,7 +32,7 @@ function Navbar() {
                 <NavLink to={"/about"}>About</NavLink>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <NavLink to={'/blogs'}>Blog</NavLink>
               </li>
               <li>
                 <NavLink to={'/contact'}>Contact</NavLink>

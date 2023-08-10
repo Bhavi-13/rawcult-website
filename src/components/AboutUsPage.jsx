@@ -10,6 +10,7 @@ function AboutUsPage() {
        <AboutInfo />
        <CustomerFeedback />
        <WhyUs/>
+       <h3 className='text-center mt-5 mb-5'>My Latest News</h3>
        <LatestNews/>
        <Coupon/>
     </div>
