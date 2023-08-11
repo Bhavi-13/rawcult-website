@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../scss/DetailsForm.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ApprovalForm() {
   const [name, setName] = useState("");
@@ -13,6 +14,7 @@ function ApprovalForm() {
   const [productDeal, setProductDeal] = useState("");
   const [bankAccount, setBankAccount] = useState("");
   const [userId, setUserId] = useState("");
+  const navigate = useNavigate()
 
   const userDetails = async (req, res) => {
     try {
@@ -37,6 +39,7 @@ function ApprovalForm() {
       {
         withCredentials: true,
       }
+      
     );
     return response.data.user;
   };
@@ -72,6 +75,7 @@ function ApprovalForm() {
         { withCredentials: true }
       );
       alert("User Updated Successfully!");
+      navigate("/manufacturer"); 
     } catch (error) {
       console.log(error);
     }
@@ -212,7 +216,7 @@ function ApprovalForm() {
           ></textarea>
         </div>
 
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

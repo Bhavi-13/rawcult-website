@@ -1,29 +1,19 @@
-import React, {useState, useEffect} from 'react'
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom'
 
-function AdminPanel() {
-
+function ManufacturerDashboard() {
     const [sales,setSales] = useState("$4,679")
     const [payments,setPayments] = useState("$2,456")
     const [revenue,setRevenue] = useState("425k")
     const [orders,setOrders] = useState("276k")
     const [report,setReport] = useState("$84,686k")
-
-    // useEffect(() => {
-    //    getSales()
-    //    getPayments()
-    //    getRevenue()
-    //    getOrders()
-    // },[])
   return (
-        <div className='container-fluid m-5'>
+    <div className='container-fluid'>
 
-            <div className='row'>
-                <nav className='col-md-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-success border-0 d-none d-md-block bg-light sidebar'>
+            <div className='row flex-lg-row flex-column'>
+                <nav className='col-md-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-success border-0 bg-light sidebar'>
                     <div className='position-sticky'>
-                        <ul className='nav flex-column'>
+                        <ul className='nav'>
                           
                            <img
                                 src={
@@ -84,12 +74,21 @@ function AdminPanel() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="row d-flex justify-content-center">
+                            <div className="col-md-2">
+                                <NavLink to={'/createProduct'} 
+                                    className="text-bg-primary border border-primary float-end mb-5 p-2 px-4 text-decoration-none">
+                                    Create Product
+                                </NavLink>
+                            </div>
+
                     </div>
                 </main>
             </div>
           
       </div>
-    )
-  }
+  )
+}
 
-export default AdminPanel
+export default ManufacturerDashboard

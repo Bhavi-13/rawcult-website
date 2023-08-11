@@ -1,54 +1,83 @@
-import "../scss/Navbar.scss";
-import {NavLink} from 'react-router-dom'
+
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import '../scss/Navbar.scss';
 
 function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
-    <div className='navbar'>
-      <div className="content-container ">
-        <div className='links-container'>
-       
-          <div className="category-links">
-            <button className="all-categories">
-              <div className="icon-text">
-                <i className="bi bi-grip-horizontal"></i>
-                <p>All Categories</p>
-              </div>
-              <div className="icon">
-                <i className="bi bi-caret-down-fill"></i>
-              </div>
-            </button>
-            <ul className="links">
-              <li>
-                <NavLink to={'/'}>Home</NavLink>
-              </li>
-              <li>
-                <a href="#">Shop</a>
-              </li>
-              <li>
-                <a href="#">Pages</a>
-              </li>
-              <li>
-                <NavLink to={"/about"}>About</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/blogs'}>Blog</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/contact'}>Contact</NavLink>
-              </li>
+    <nav className="navbar navbar-expand-lg navbar-light">
+      <div className="container-fluid">
+      
+          <div className="dropdown">
+            <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i className="bi bi-text-left"></i>All Categories
+            </a>
+
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" href="#">Action</a></li>
+              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><a className="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </div>
-          <button className="seller-btn">
-            Become a Seller
-            <i className="bi bi-caret-right-fill"></i>
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleMobileMenu}
+          >
+            <span className="navbar-toggler-icon"></span>
           </button>
-        </div>
+         
+          <div
+            className={`collapse navbar-collapse ${
+              isMobileMenuOpen ? 'show' : ''
+            }`}
+          >
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+              </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/shop">
+                    Shop
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/pages">
+                    Pages
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/about">
+                    About
+                  </NavLink>
+                </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/blogs">
+                  Blog
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+            <button className="btn btn-primary">Become a Seller</button>
+          </div>
+           
+       
       </div>
-    </div>
+    </nav>
   );
 }
 
 export default Navbar;
-
-
