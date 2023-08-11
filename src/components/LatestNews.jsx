@@ -23,7 +23,6 @@ const MyLatestNews = () => {
   ];
   return (
     <div className="latestNews">
-      <h2>My Latest News</h2>
       <div className="grid-container">
         {newsData.map((news, index) => (
           <div className="card" key={index}>
