@@ -1,10 +1,11 @@
 @use "./modules/flex";
 @use "./modules/vrs";
 
-.navbar {
-  @include flex.flexbox(_, center, flex-end);
+nav {
+  // @include flex.flexbox(_, center, flex);
   background-color: vrs.$prim-color;
   height: 60px;
+
   .links-container {
     @include flex.flexbox(row, space-between);
     margin: 0 10px;
@@ -63,7 +64,5 @@
 }
 
 @media only screen and (max-width: 950px) {
-  .navbar {
-    display: none;
-  }
+  
 }

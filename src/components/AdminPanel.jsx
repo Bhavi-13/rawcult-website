@@ -18,12 +18,12 @@ function AdminPanel() {
     //    getOrders()
     // },[])
   return (
-        <div className='container-fluid m-5'>
+        <div className='container-fluid'>
 
-            <div className='row'>
-                <nav className='col-md-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-success border-0 d-none d-md-block bg-light sidebar'>
+            <div className='row flex-lg-row flex-column'>
+                <nav className='col-md-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-success border-0 bg-light sidebar'>
                     <div className='position-sticky'>
-                        <ul className='nav flex-column'>
+                        <ul className='nav'>
                           
                            <img
                                 src={
@@ -93,3 +93,5 @@ function AdminPanel() {
   }
 
 export default AdminPanel
+
+
