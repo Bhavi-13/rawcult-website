@@ -18,7 +18,6 @@ import Login from "./components/Login";
 import ApprovalForm from "./components/ApprovalForm";
 import ProductsUploadForm from "./components/ProductsUploadForm";
 import Register from "./components/Register";
-import AdminPanel from "./components/AdminPanel";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckOut from "./components/CheckOut";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -27,6 +26,7 @@ import AboutUsPage from "./components/AboutUsPage";
 import ContactPage from "./components/ContactPage";
 import BlogPage from "./components/BlogPage";
 import SelectRole from "./components/SelectRole";
+import ManufacturerDashboard from "./components/ManufacturerDashboard";
 
 
 function App() {
@@ -42,6 +42,9 @@ function App() {
               <Route path="/login" element={<Login/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/select" element={<SelectRole/>} />
+              <Route path="/approval" element={<ApprovalForm/>} />
+              <Route path="/manufacturer" element={<ManufacturerDashboard/>} />
+              <Route path="createProduct" element={<ProductsUploadForm/>} />
               <Route path="/" element={<HomePage/>} />
               <Route path="/about" element={<AboutUsPage/>} />
               <Route path="/contact" element={<ContactPage/>} />
@@ -51,12 +54,11 @@ function App() {
           <Footer />
 
       </BrowserRouter>
-      
-      <AdminPanel/>
+     
       <ShoppingCart/>
       <CheckOut/>
-      <ApprovalForm />
-      <ProductsUploadForm />
+      {/* <ApprovalForm /> */}
+      {/* <ProductsUploadForm /> */}
      
     </div>
   );

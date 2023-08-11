@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom'
 
 function ManufacturerDashboard() {
     const [sales,setSales] = useState("$4,679")
@@ -73,6 +74,15 @@ function ManufacturerDashboard() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="row d-flex justify-content-center">
+                            <div className="col-md-2">
+                                <NavLink to={'/createProduct'} 
+                                    className="text-bg-primary border border-primary float-end mb-5 p-2 px-4 text-decoration-none">
+                                    Create Product
+                                </NavLink>
+                            </div>
+
                     </div>
                 </main>
             </div>

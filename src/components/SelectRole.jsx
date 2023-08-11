@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ManufacturerDashboard from './ManufacturerDashboard';
 import RetailerDashboard from './RetailerDashboard';
 import '../scss/SelectRole.scss'
+import ApprovalForm from './ApprovalForm';
 
 function SelectRole() {
     const [showForm, setShowForm] = useState(false);
@@ -22,11 +23,11 @@ function SelectRole() {
   
     <div className="first-sign-up">
         {showForm ? (
-            <>{isUser ? <ManufacturerDashboard /> : <RetailerDashboard /> }</>
+            <>{isUser ? <ApprovalForm /> : <RetailerDashboard /> }</>
         ) : (
             <div className="select-user-type">
             {/* <img id="logo" src={logo} alt="" /> */}
-            <h3>You Are Here As</h3>
+            <h3>Select Your Role:</h3>
             <div className="btns">
                 <button onClick={handleManufacturerClick}>Manufacturer</button>
                 <button onClick={handleRetailerClick}>Retailer</button>
