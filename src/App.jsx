@@ -21,23 +21,27 @@ import Register from "./components/Register";
 import AdminPanel from "./components/AdminPanel";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckOut from "./components/CheckOut";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from "./components/HomePage";
 import AboutUsPage from "./components/AboutUsPage";
 import ContactPage from "./components/ContactPage";
 import BlogPage from "./components/BlogPage";
+import SelectRole from "./components/SelectRole";
 
 
 function App() {
   return (
     <div>
-      <Router>
+      <BrowserRouter>
 
           <Header />
           <Search />
           <Navbar />
 
           <Routes>
+              <Route path="/login" element={<Login/>} />
+              <Route path="/register" element={<Register/>} />
+              <Route path="/select" element={<SelectRole/>} />
               <Route path="/" element={<HomePage/>} />
               <Route path="/about" element={<AboutUsPage/>} />
               <Route path="/contact" element={<ContactPage/>} />
@@ -46,13 +50,11 @@ function App() {
           
           <Footer />
 
-      </Router>
+      </BrowserRouter>
       
       <AdminPanel/>
       <ShoppingCart/>
       <CheckOut/>
-      <Login />
-      <Register/>
       <ApprovalForm />
       <ProductsUploadForm />
      

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useNavigate()
 
   const handleRegister = async () => {
     try {
@@ -15,11 +17,14 @@ function Register() {
           email,
           password,
         }
+        
       );
-
+      
       console.log("Registration successful!");
+      
       // You can add further logic here, such as redirecting the user or showing a success message.
       alert(response.data.msg);
+      navigate('/login');
     } catch (error) {
       console.error("Registration error!");
       // Handle error, show error message, etc.
@@ -80,7 +85,7 @@ function Register() {
               </button>
             </form>
             <div className="register-link">
-              Already Have an Account?<a href="#">Login Here</a>
+              Already Have an Account?<a href="/login">Login Here</a>
             </div>
           </div>
         </div>

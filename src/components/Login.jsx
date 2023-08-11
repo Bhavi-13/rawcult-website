@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "../scss/Login.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
 
   const handleLogin = async (req, res) => {
     try {
@@ -17,7 +19,8 @@ function Login() {
         { withCredentials: true }
       );
       // console.log("Login Successful!");
-      alert("User Logged In Sucessfully!");
+      alert("User Logged In Successfully!");
+        navigate('/select')
     } catch (error) {
       console.error("Login Failed!", error);
       alert(error.response.data.msg);
@@ -69,7 +72,7 @@ function Login() {
               </button>
             </form>
             <div className="register-link">
-              Don't Have an Account? <a href="#">Register Here</a>
+              Don't Have an Account? <a href="/register">Register Here</a>
             </div>
           </div>
           <div className="divider">
