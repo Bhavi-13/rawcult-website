@@ -19,6 +19,8 @@ function ProductsUploadForm() {
           withCredentials: true,
         }
       );
+
+      const uploadImage = await axios.post;
       alert("Product added successfully!");
     } catch (error) {
       console.log(error);
