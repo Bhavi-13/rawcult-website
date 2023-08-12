@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogin = async (req, res) => {
     try {
@@ -20,7 +20,7 @@ function Login() {
       );
       // console.log("Login Successful!");
       alert("User Logged In Successfully!");
-        navigate('/select')
+      navigate("/select");
     } catch (error) {
       console.error("Login Failed!", error);
       alert(error.response.data.msg);

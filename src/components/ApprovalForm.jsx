@@ -1,89 +1,68 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../scss/DetailsForm.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function ApprovalForm() {
-  const [name, setName] = useState("");
-  const [mfdUnit, setMfdUnit] = useState("");
-  const [unitAddress, setUnitAddress] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [gstNo, setGstNo] = useState("");
-  const [aadhaarOrPan, setAadhaarOrPan] = useState("");
-  const [productDeal, setProductDeal] = useState("");
-  const [bankAccount, setBankAccount] = useState("");
-  const [userId, setUserId] = useState("");
-  const navigate = useNavigate()
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    mfdUnit: "",
+    unitAddress: "",
+    phone: "",
+    gstNo: "",
+    aadhaarOrPan: "",
+    productDeal: "",
+    bankAccount: "",
+    image: "",
+  });
+  const navigate = useNavigate();
 
-  const userDetails = async (req, res) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleImageUpload = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
     try {
-      const response = await axios.get(
-        "https://rawcult-be.onrender.com/users/showMe",
-        {
-          withCredentials: true,
-        }
+      const response = await axios.post(
+        "https://rawcult-be.onrender.com/products/uploadImage",
+        formData,
+        { withCredentials: true }
       );
-
-      setEmail(response.data.user.email);
-      setName(response.data.user.name);
-      setUserId(response.data.user.userId);
+      setUserData((prevData) => ({
+        ...prevData,
+        image: response.data.image.src,
+      }));
     } catch (error) {
-      console.log(error);
+      console.error("Image upload error:", error);
     }
   };
 
-  const additionalDetails = async (req, res) => {
-    const response = await axios.get(
-      `https://rawcult-be.onrender.com/users/${userId}`,
-      {
-        withCredentials: true,
-      }
-      
-    );
-    return response.data.user;
-  };
-
-  useEffect(() => {
-    userDetails();
-    const details = additionalDetails();
-    details.then((data) => {
-      setMfdUnit(data.mfdUnit);
-      setUnitAddress(data.unitAddress);
-      setPhone(data.phone);
-      setGstNo(data.gstNo);
-      setAadhaarOrPan(data.aadhaarOrPan);
-      setBankAccount(data.bankAccount);
-    });
-  });
-
-  const handleOnSubmit = async (req, res) => {
+  const handleUpdateUser = async () => {
     try {
       const response = await axios.patch(
         "https://rawcult-be.onrender.com/users/updateUser",
-        {
-          name,
-          email,
-          mfdUnit,
-          unitAddress,
-          phone,
-          gstNo,
-          aadhaarOrPan,
-          productDeal,
-          bankAccount,
-        },
+        userData,
         { withCredentials: true }
       );
-      alert("User Updated Successfully!");
-      navigate("/manufacturer"); 
+
+      alert("Form Submitted Successfully!");
+      navigate("/manufacturer");
     } catch (error) {
-      console.log(error);
+      console.error("Update user error:", error);
+      alert("There is some problem in saving the form");
     }
   };
 
   return (
     <div className="detailsForm">
-      <form action="" onSubmit={(e) => handleOnSubmit(e.preventDefault())}>
+      <form action="" onSubmit={(e) => handleUpdateUser(e.preventDefault())}>
         <h4>Selling Approval Form</h4>
         <div className="inputGroup">
           <label htmlFor="name">
@@ -94,49 +73,49 @@ function ApprovalForm() {
             name="name"
             id="name"
             required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            // value={name}
+            onChange={handleInputChange}
           />
         </div>
 
         <div className="inputGroup">
-          <label htmlFor="shop">
+          <label htmlFor="mfdUnit">
             Your Shop/Manufacturer Unit Name <span>*</span> :
           </label>
           <input
             type="text"
-            name="shop"
-            id="shop"
+            name="mfdUnit"
+            id="mfdUnit"
             required
-            value={mfdUnit}
-            onChange={(e) => setMfdUnit(e.target.value)}
+            // value={mfdUnit}
+            onChange={handleInputChange}
           />
         </div>
         <div className="inputGroup">
-          <label htmlFor="address">
+          <label htmlFor="unitAddress">
             Your Unit Address <span>*</span> :
           </label>
           <textarea
-            name="address"
-            id="address"
+            name="unitAddress"
+            id="unitAddress"
             cols="40"
             rows="3"
             required
-            value={unitAddress}
-            onChange={(e) => setUnitAddress(e.target.value)}
+            // value={unitAddress}
+            onChange={handleInputChange}
           ></textarea>
         </div>
         <div className="inputGroup">
-          <label htmlFor="number">
+          <label htmlFor="phone">
             Phone Number <span>*</span> :
           </label>
           <input
-            type="number"
-            name="number"
-            id="number"
+            type="text"
+            name="phone"
+            id="phone"
             required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            // value={phone}
+            onChange={handleInputChange}
           />
         </div>
         <div className="inputGroup">
@@ -148,8 +127,8 @@ function ApprovalForm() {
             name="email"
             id="email"
             required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            // value={email}
+            onChange={handleInputChange}
           />
         </div>
         <div className="inputGroup">
@@ -158,41 +137,46 @@ function ApprovalForm() {
           </label>
           <input
             type="text"
-            name="gst"
-            id="gst"
+            name="gstNo"
+            id="gstNo"
             required
-            value={gstNo}
-            onChange={(e) => setGstNo(e.target.value)}
+            // value={gstNo}
+            onChange={handleInputChange}
           />
         </div>
         <div className="inputGroup">
-          <label htmlFor="pan">
+          <label htmlFor="aadhaarOrPan">
             Your Aadhar/PAN Card Number <span>*</span> :
           </label>
           <input
             type="text"
-            name="pan"
-            id="pan"
+            name="aadhaarOrPan"
+            id="aadhaarOrPan"
             required
-            value={aadhaarOrPan}
-            onChange={(e) => setAadhaarOrPan(e.target.value)}
+            // value={aadhaarOrPan}
+            onChange={handleInputChange}
           />
         </div>
         <div className="inputGroup">
           <label htmlFor="image">
-            Upload Your Image <span className="optional">(optional)</span>{" "}
+            Upload Your Image <span className="optional">(optional)</span> :
           </label>
-          <input type="file" name="image" id="image" />
+          <input
+            type="file"
+            name="image"
+            id="image"
+            onChange={handleImageUpload}
+          />
         </div>
         <div className="inputGroup">
           <label htmlFor="products">
             Products You deal in <span>*</span> :
           </label>
           <select
-            name="products"
-            id="products"
-            value={productDeal}
-            onChange={(e) => setProductDeal(e.target.value)}
+            name="productDeal"
+            id="productDeal"
+            // value={productDeal}
+            onChange={handleInputChange}
           >
             <option value="category">Category</option>
             <option value="Shirts">Shirts</option>
@@ -202,21 +186,21 @@ function ApprovalForm() {
           </select>
         </div>
         <div className="inputGroup">
-          <label htmlFor="account">
+          <label htmlFor="bankAccount">
             Bank Account Details <span>*</span> :
           </label>
           <textarea
-            name="account"
-            id="account"
+            name="bankAccount"
+            id="bankAccount"
             cols="40"
             rows="3"
             required
-            value={bankAccount}
-            onChange={(e) => setBankAccount(e.target.value)}
+            // value={bankAccount}
+            onChange={handleInputChange}
           ></textarea>
         </div>
 
-        <button type="submit">Submit</button>
+        <button>Submit</button>
       </form>
     </div>
   );
