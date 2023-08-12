@@ -27,6 +27,7 @@ import ContactPage from "./components/ContactPage";
 import BlogPage from "./components/BlogPage";
 import SelectRole from "./components/SelectRole";
 import ManufacturerDashboard from "./components/ManufacturerDashboard";
+import VerifyEmailPage from "./components/VerifyEmail";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/user/verify-email" element={<VerifyEmailPage />} />
         </Routes>
 
         <Footer />
