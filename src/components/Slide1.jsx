@@ -7,7 +7,7 @@ function Slide1({ setAddress, setMobile, onNext, address, mobile }) {
                 <div className="col-md-6">
                     <div className="card mt-2">
                         <div className="card-header bg-dark">
-                            <h5 className="text-light">1. Delivery Address</h5>
+                            <h5 className="text-light"> Delivery Address</h5>
                         </div>
                         <div className="card-body">
                             <div className="form-group mt-2 mb-2">
